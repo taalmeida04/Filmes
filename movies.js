@@ -52,7 +52,7 @@ const DATA =
         id:'09',
         nome:'The Flash',
         nota:'6.6',
-        imagem:'https://media.themoviedb.org/t/p/w600_and_h900_face/caq9Xi6b1sZNREfzFBO2tRIBzWn.jpg'
+        imagem:'https://www.europanet.com.br/image_gen/resizeimg.php?cod_produto=4500101'
     },
     {
         id:'10',
