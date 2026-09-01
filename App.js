@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, inputSearch
 import Header from './src/components/Header';
 import Search from './src/components/Search';
 import Banner from './src/components/Banner';
+import CardMovies from './src/components/CardMovies';
 import Filmes from './movies';
 import { FlatList } from 'react-native-web';
 
@@ -21,14 +22,11 @@ export default function App() {
     keyExtractor={(item)=> item.id}
     renderItem={({item})=> (
 
-         <TouchableOpacity style={styles.containerFilmes}>
-
-          <Image style={styles.images} source={{ uri: item.imagem}} />
-                  <Text style ={styles.titulo}>{item.nome} </Text>
-                 
-                  <Text style ={styles.textNota}> {item.nota} </Text>
-
-         </TouchableOpacity>
+         <CardMovies
+                    titulo={item.nome}
+                    imagem={item.imagem}
+                    nota={item.nota}
+                    />
 
     )}
    
