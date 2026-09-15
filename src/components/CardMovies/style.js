@@ -16,7 +16,7 @@ const style = StyleSheet.create({
             heigh:28
         },
     
-        titulo:{
+        nome:{
             color: '#fff',
             fontSize:12,
             paddingTop:8  
@@ -36,3 +36,5 @@ const style = StyleSheet.create({
         }
 
 });
+
+export default style;

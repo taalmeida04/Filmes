@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image} from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
-import styles from './style';
+import styles from './style.js';
 
 export default function Banner() {
     return (

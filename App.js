@@ -13,6 +13,7 @@ export default function App() {
      <Header></Header>
      <Search></Search>
      <Banner></Banner>
+     
 
     <View style = {{width:'90%'}}>
     <FlatList
