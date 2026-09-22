@@ -1,44 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, inputSearch } from 'react-native';
-import Header from './src/components/Header';
-import Search from './src/components/Search';
-import Banner from './src/components/Banner';
-import CardMovies from './src/components/CardMovies';
-import Filmes from './movies';
-import { FlatList } from 'react-native-web';
+
+import Rotas from './src/Rotas';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-
-     <Header></Header>
-     <Search></Search>
-     <Banner></Banner>
-     
-
-    <View style = {{width:'90%'}}>
-    <FlatList
-    showsVerticalScrollIndicator= {false}
-    horizontal = {true}
-    data={Filmes}
-    keyExtractor={(item)=> item.id}
-    renderItem={({item})=> (
-
-         <CardMovies
-                    titulo={item.nome}
-                    imagem={item.imagem}
-                    nota={item.nota}
-                    />
-
-    )}
-   
-   
-   
-   
-    />
-     
-    </View>
-    </View>
-
+   <Rotas></Rotas>
   );
 }
 const styles = StyleSheet.create({
