@@ -27,6 +27,7 @@ export default function Home() {
                     titulo={item.nome}
                     imagem={item.imagem}
                     nota={item.nota}
+                    sinopse={item.sinopse}
                     />
 
     )}
@@ -62,11 +63,7 @@ const styles = StyleSheet.create({
         paddingTop:8  
     },
 
-    textNota:{
-        fontSize:10,
-        color:'#fff',
-        paddingLeft:4
-    },
+   
 
     images:{
         width:'100%',
