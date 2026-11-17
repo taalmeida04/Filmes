@@ -1,6 +1,6 @@
-import { ScrollView, View, Text, Image, StyleSheet } from 'react-native';
-
-import { useRoute } from '@react-navigation/native';
+import { ScrollView, View, Text, Image, StyleSheet } from "react-native";
+import { useRoute } from "@react-navigation/native";
+import StarRating from 'react-native-star-rating-widget';
 
 export default function Detalhes() {
 
@@ -9,141 +9,129 @@ export default function Detalhes() {
     const { titulo, nota, imagem, sinopse } = route.params;
 
     return (
-
         <ScrollView
+    style={{
+        flex: 1,
+        minHeight: 0,
+        backgroundColor: '#141a29',
 
-            style={styles.screen}
+    }}
+    contentContainerStyle={{
+        flexGrow: 1,
+        padding: 20,
+        paddingBottom: 100,
+    }}
+    showsVerticalScrollIndicator={true}>
 
-            contentContainerStyle={styles.content}
+            <Text style={styles.cabecalho}>Sobre</Text>
 
-            showsVerticalScrollIndicator={true}
+            <View style={styles.card}>
 
-        >
+                <Image
+                    style={styles.imagem}
+                    source={{ uri: imagem }}
+                />
 
-            <Image
-
-                style={styles.poster}
-
-                source={{ uri: imagem }}
-
-            />
-
-            <Text style={styles.title}>
-
-                {titulo}
-
-            </Text>
-
-            <Text style={styles.rating}>
-
-                ⭐ {nota}
-
-            </Text>
-
-            <View style={styles.synopsisSection}>
-
-                <Text style={styles.synopsisTitle}>
-
-                    Sinopse
-
+                <Text style={styles.titulo}>
+                    {titulo}
                 </Text>
 
-                <Text style={styles.synopsis}>
+                <View style={styles.notaContainer}>
 
+                    <StarRating
+                        rating={Number(nota) / 2}
+                        onChange={() => {}}
+                        starSize={25}
+                        maxStars={5}
+                        enableSwiping={false}
+                    />
+
+                </View>
+
+                <Text style={styles.subtitulo}>
+                    Sinopse
+                </Text>
+
+                <Text style={styles.sinopse}>
                     {sinopse}
-
                 </Text>
 
             </View>
 
         </ScrollView>
-
     );
-
 }
 
 const styles = StyleSheet.create({
 
-    screen: {
-
+    container: {
         flex: 1,
-
         backgroundColor: '#141a29',
-
     },
 
-    content: {
-
-        padding: 20,
-
-        paddingBottom: 50,
-
+    conteudo: {
         flexGrow: 1,
-
+        padding: 20,
+        paddingTop: 50,
+        paddingBottom: 100,
+        alignItems: 'center',
     },
 
-    poster: {
+    cabecalho: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        color: '#ffffff',
+        textAlign: 'center',
+        marginBottom: 30,
+    },
 
+    card: {
         width: '100%',
+        maxWidth: 750,
+        backgroundColor: '#202a40',
+        borderRadius: 18,
+        padding: 15,
+        alignItems: 'center',
+        marginBottom: 20,
+    },
 
+    imagem: {
+        width: '100%',
         height: 400,
-
         borderRadius: 12,
-
+        marginBottom: 20,
         resizeMode: 'cover',
-
     },
 
-    title: {
-
-        color: '#fff',
-
+    titulo: {
         fontSize: 25,
-
         fontWeight: 'bold',
-
-        marginTop: 15,
-
+        color: '#ffffff',
+        textAlign: 'center',
+        marginBottom: 15,
     },
 
-    rating: {
-
-        color: '#fff',
-
-        fontSize: 18,
-
-        marginTop: 10,
-
+    notaContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 25,
     },
 
-    synopsisSection: {
-
-        marginTop: 25,
-
-    },
-
-    synopsisTitle: {
-
-        color: '#fff',
-
+    subtitulo: {
         fontSize: 22,
-
         fontWeight: 'bold',
-
+        color: '#ffffff',
+        alignSelf: 'flex-start',
         marginBottom: 10,
-
     },
 
-    synopsis: {
-
-        color: '#d1d5db',
-
+    sinopse: {
         fontSize: 16,
-
-        lineHeight: 24,
-
+        color: '#d1d5db',
         textAlign: 'justify',
-
+        lineHeight: 24,
+        alignSelf: 'stretch',
     },
 
 });
